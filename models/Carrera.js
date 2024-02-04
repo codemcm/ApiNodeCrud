@@ -19,7 +19,7 @@ const getCarreras = (request, response, next) => {
         responseReturn.status = true;
         responseReturn.code = 200;
         responseReturn.message = "Success";
-        responseReturn.data = results;
+        responseReturn.body = results;
         response.status(200).json(responseReturn);
     });
     connection.end();
