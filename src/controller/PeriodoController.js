@@ -27,12 +27,16 @@ exports.create = function (req, res) {
       .send({ error: true, message: "Please provide all required field" });
   } else {
     Periodo.create(periodoNew, function (err, periodo) {
+      var responseReturn = new ResponseClass();
       if (err) res.send(err);
-      res.json({
-        error: false,
-        message: "Periodo registrado con exito",
-        data: periodo,
-      });
+      console.log("res", periodo);
+      responseReturn.status = true;
+      responseReturn.code = 200;
+      responseReturn.message = "Success";
+      responseReturn.data = periodo;
+      res.status(200);
+      res.send(responseReturn);
+
     });
   }
 };
