@@ -16,6 +16,18 @@ Periodo.getAll = function (result) {
         result(null, res);
       }
     });
-  };
+};
+
+Periodo.create = function (periodoNew, result) {
+  dbConn.query("INSERT INTO Periodo set ?", periodoNew, function (err, res) {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      console.log(res.insertId);
+      result(null, res.insertId);
+    }
+  });
+};
 
 module.exports = Periodo;
