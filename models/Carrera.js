@@ -26,7 +26,6 @@ const getCarreras = (request, response, next) => {
 
 }
 
-
 module.exports = {
     getCarreras
 }
