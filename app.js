@@ -8,9 +8,22 @@ var indexRouter = require('./routes/index');
 var periodoRouter = require('./routes/Periodo');
 var carreraRouter = require('./routes/Carrera');
 var versionRouter = require('./routes/Version');
+var EstatusClaseRouter = require('./routes/EstatusClase');
+var ProfesorRouter = require('./routes/Profesor');
+var ClaseRouter = require('./routes/Clase');
+var EstadoRouter = require('./routes/Estado');
+var EstatusEstRouter = require('./routes/EstatusEst');
+var TipoActividadRouter = require('./routes/TipoActividad');
+var ActividadRouter = require('./routes/Actividad');
+var CiudadRouter = require('./routes/Ciudad');
+var DomicilioRouter = require('./routes/Domicilio');
+var EstudianteRouter = require('./routes/Estudiante');
+var EstudianteActividadRouter = require('./routes/EstudianteActividad');
+var TipoUsuarioRouter = require('./routes/TipoUsuario');
+var UsuarioRouter = require('./routes/Usuario');
 
 //var carreraRouter = require()
-var app = express();
+var app = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +39,19 @@ app.use('/', indexRouter);
 app.use('/v1/periodo', periodoRouter);
 app.use('/v1/carrera', carreraRouter);
 app.use('/v1/version', versionRouter);
+app.use('/v1/estatusclase', EstatusClaseRouter);
+app.use('/v1/Profesor', ProfesorRouter);
+app.use('/v1/Clase', ClaseRouter);
+app.use('/v1/Estado', EstadoRouter);
+app.use('/v1/EstatusEst', EstatusEstRouter);
+app.use('/v1/TipoActividad', TipoActividadRouter);
+app.use('/v1/Actividad', ActividadRouter);
+app.use('/v1/Ciudad', CiudadRouter);
+app.use('/v1/Domicilio',DomicilioRouter);
+app.use('/v1/Estudiante',EstudianteRouter);
+app.use('/v1/EstudianteActividad',EstudianteActividadRouter);
+app.use('/v1/TipoUsuario',TipoUsuarioRouter);
+app.use('/v1/Usuario',UsuarioRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
